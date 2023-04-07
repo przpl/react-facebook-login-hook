@@ -22,7 +22,7 @@
     "main": "dist/index.js",
     "scripts": {
         "build": "rimraf -rf dist && tsc",
-        "npm:publish": "npm publish --public",
+        "npm:publish": "npm run build && npm publish --public",
         "storybook": "storybook dev -p 6006 --https --ssl-cert ./.dev/cert.pem --ssl-key ./.dev/key.pem"
     },
     "peerDependencies": {
