@@ -17,6 +17,6 @@ function createScriptElement(id: string, src: string) {
     });
 }
 
-export async function loadSdk(language: string) {
-    await createScriptElement(SDK_SCRIPT_ID, `https://connect.facebook.net/${language}/sdk.js`);
+export async function loadSdk(language: string, version: string, appId: string) {
+    await createScriptElement(SDK_SCRIPT_ID, `https://connect.facebook.net/${language}/sdk.js#version=${version}&appId=${appId}`);
 }

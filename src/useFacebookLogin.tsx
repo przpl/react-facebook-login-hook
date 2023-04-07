@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { DIALOG_PARAMS_STATE, getFB, isRedirected, redirectToDialog } from "./helpers/fbClient";
 
+import { DIALOG_PARAMS_STATE, getFB, isRedirected, redirectToDialog } from "./helpers/fbClient";
 import { isClientSide } from "./helpers/ssr";
 import { loadSdk } from "./sdk/loadSdk";
-import { LoginResponse, LogOutResponse } from "./types/loginStatusResponse";
+import { LogOutResponse, LoginResponse } from "./types/loginStatusResponse";
 import type { DialogParams, LoginOptions, Options } from "./types/options";
 
 export function useFacebookLogin(options: Options) {
@@ -24,8 +24,10 @@ export function useFacebookLogin(options: Options) {
 
     useEffect(() => {
         async function init() {
+            const version = options.sdkInitParams?.version ?? "v14.0";
+
             try {
-                await loadSdk(options.language || "en_US");
+                await loadSdk(options.language || "en_US", version, options.appId);
             } catch (error) {
                 options.onInitError?.(error);
                 return;
@@ -35,7 +37,7 @@ export function useFacebookLogin(options: Options) {
 
             window.fbAsyncInit = () => {
                 getFB().init({
-                    version: "v14.0",
+                    version,
                     ...options.sdkInitParams,
                     appId: options.appId,
                 });
