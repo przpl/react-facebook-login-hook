@@ -56,17 +56,17 @@ return (
 | loginOptions  | `LoginOptions` |          | `undefined`          | Parameters for the Facebook login flow                            |
 | dialogParams  | `DialogParams` |          | `undefined`          | Parameters for the Facebook login dialog                          |
 
-### InitParams ([Facebook Documentation about init params](https://developers.facebook.com/docs/javascript/reference/FB.init/v14.0))
+### InitParams ([Facebook Documentation about init params](https://developers.facebook.com/docs/javascript/reference/FB.init/v16.0))
 
 | name                 | type      | Required | Default value | Description                                                                                             |
 | -------------------- | --------- | -------- | ------------- | ------------------------------------------------------------------------------------------------------- |
-| version              | `string`  |          | v14.0         | SDK version                                                                                             |
+| version              | `string`  |          | v16.0         | SDK version                                                                                             |
 | cookie               | `boolean` |          | `undefined`   | Determines whether a cookie is created for the session or not                                           |
 | localStorage         | `boolean` |          | true          | Determines whether a long-lived access token for the session can be saved in localStorage               |
 | xfbml                | `boolean` |          | `undefined`   | Determines whether XFBML tags used by social plugins are parsed                                         |
 | frictionlessRequests | `boolean` |          | `undefined`   | Frictionless Requests are available to games on Facebook.com or on mobile web using the JavaScript SDK. |
 
-### LoginOptions ([Facebook Documentation about login options](https://developers.facebook.com/docs/reference/javascript/FB.login/v14.0))
+### LoginOptions ([Facebook Documentation about login options](https://developers.facebook.com/docs/reference/javascript/FB.login/v16.0))
 
 | name                    | type      | Required | Default value | Description                                                                                                             |
 | ----------------------- | --------- | -------- | ------------- | ----------------------------------------------------------------------------------------------------------------------- |

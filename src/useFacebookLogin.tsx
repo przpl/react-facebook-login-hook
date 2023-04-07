@@ -24,7 +24,7 @@ export function useFacebookLogin(options: Options) {
 
     useEffect(() => {
         async function init() {
-            const version = options.sdkInitParams?.version ?? "v14.0";
+            const version = options.sdkInitParams?.version ?? "v16.0";
 
             try {
                 await loadSdk(options.language || "en_US", version, options.appId);

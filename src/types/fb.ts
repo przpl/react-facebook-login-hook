@@ -2,7 +2,7 @@ import { LoginResponse, LogOutResponse } from "./loginStatusResponse";
 import { InitParams, LoginOptions } from "./options";
 
 /**
- * @see https://developers.facebook.com/docs/javascript/reference/v14.0
+ * @see https://developers.facebook.com/docs/javascript/reference/v16.0
  */
 export interface FB {
     init: (params: InitParams) => void;

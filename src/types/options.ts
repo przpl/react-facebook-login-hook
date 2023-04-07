@@ -27,13 +27,13 @@ export interface ScopeParams {
     scope?: string;
 }
 
-/** @see https://developers.facebook.com/docs/javascript/reference/FB.init/v14.0 */
+/** @see https://developers.facebook.com/docs/javascript/reference/FB.init/v16.0 */
 export interface InitParams extends AppIdParams {
     /** Determines which versions of the Graph API and any API dialogs or plugins are invoked when using the .api() and .ui() functions.
      * @see https://developers.facebook.com/docs/graph-api/changelog
-     * @default 'v14.0'
+     * @default 'v16.0'
      */
-    version?: "v10.0" | "v11.0" | "v12.0" | "v13.0" | "v14.0";
+    version?: "v10.0" | "v11.0" | "v12.0" | "v13.0" | "v14.0" | "v15.0" | "v16.0";
 
     /** Determines whether a cookie is created for the session or not. If enabled, it can be accessed by server-side code.
      * @default false
