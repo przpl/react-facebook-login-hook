@@ -19,5 +19,5 @@
         "sourceMap": false
     },
     "include": ["src"],
-    "exclude": ["node_modules", "**/*.spec.ts", "**/*.spec.tsx"]
+    "exclude": ["node_modules", "**/*.spec.ts", "**/*.spec.tsx", "**/*.stories.tsx"]
 }

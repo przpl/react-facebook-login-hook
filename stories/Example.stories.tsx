@@ -1,13 +1,14 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react";
+import React from "react";
 
 import { ExampleWrapper } from "./Example";
 
 export default {
     title: "Example",
     component: ExampleWrapper,
-} as ComponentMeta<typeof ExampleWrapper>;
+} as Meta<typeof ExampleWrapper>;
 
-const Template: ComponentStory<typeof ExampleWrapper> = (args) => <ExampleWrapper {...args} />;
+const Template: StoryFn<typeof ExampleWrapper> = (args) => <ExampleWrapper {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
