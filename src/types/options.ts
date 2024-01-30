@@ -33,7 +33,7 @@ export interface InitParams extends AppIdParams {
      * @see https://developers.facebook.com/docs/graph-api/changelog
      * @default 'v16.0'
      */
-    version?: "v10.0" | "v11.0" | "v12.0" | "v13.0" | "v14.0" | "v15.0" | "v16.0";
+    version?: "v13.0" | "v14.0" | "v15.0" | "v16.0" | "v17.0" | "v18.0" | "v19.0";
 
     /** Determines whether a cookie is created for the session or not. If enabled, it can be accessed by server-side code.
      * @default false
