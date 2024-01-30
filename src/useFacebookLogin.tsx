@@ -67,20 +67,37 @@ export function useFacebookLogin(options: Options) {
     function requestLogin() {
         setBusy(true);
 
-        return new Promise<LoginResponse>((resolve) =>
-            getFB().login((res) => {
+        return new Promise<LoginResponse>((resolve, reject) => {
+            try {
+                getFB().login((res) => {
+                    setBusy(false);
+                    resolve(res);
+                }, loginOptions);
+            } catch (error) {
+                reject(error);
                 setBusy(false);
-                resolve(res);
-            }, loginOptions)
-        );
+            }
+        });
     }
 
     function logOut() {
-        return new Promise<LogOutResponse>((resolve) => getFB().logout((response) => resolve(response)));
+        return new Promise<LogOutResponse>((resolve, reject) => {
+            try {
+                getFB().logout((response) => resolve(response));
+            } catch (error) {
+                reject(error);
+            }
+        });
     }
 
     function getProfile() {
-        return new Promise((resolve) => getFB().api("me", { fields: options.fields ?? "name,email,picture" }, (res) => resolve(res)));
+        return new Promise((resolve, reject) => {
+            try {
+                getFB().api("me", { fields: options.fields ?? "name,email,picture" }, (res) => resolve(res));
+            } catch (error) {
+                reject(error);
+            }
+        });
     }
 
     return { ready, busy, logIn, logOut, getProfile };

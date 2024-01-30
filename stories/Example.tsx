@@ -1,5 +1,6 @@
 import React, { FC, useState } from "react";
 
+import { LoginResponse } from "../src/types/loginStatusResponse";
 import { useFacebookLogin } from "../src/useFacebookLogin";
 
 const Example: FC<{ appId: string }> = ({ appId }) => {
@@ -10,7 +11,17 @@ const Example: FC<{ appId: string }> = ({ appId }) => {
     const [userId, setUserId] = useState<string | null>(null);
 
     async function handleLogin() {
-        const response = await logIn();
+        let response: LoginResponse | null = null;
+        try {
+            response = await logIn();
+        } catch (error) {
+            if (error instanceof Error) {
+                if (error.message.includes("window.FB SDK not available")) {
+                    alert('An error occurred: "window.FB SDK not available". Are you using ad blockers?');
+                }
+            }
+        }
+
         if (response?.status === "connected") {
             setUserId(response.authResponse.userID);
             const profile = await getProfile();
