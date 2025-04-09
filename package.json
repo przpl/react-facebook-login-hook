@@ -29,9 +29,9 @@
         "react": "^16.8.0 || ^17.0.0 || ^18.0.0"
     },
     "devDependencies": {
-        "@babel/preset-env": "^7.23.9",
-        "@babel/preset-react": "^7.23.3",
-        "@babel/preset-typescript": "^7.23.3",
+        "@babel/preset-env": "^7.26.9",
+        "@babel/preset-react": "^7.26.3",
+        "@babel/preset-typescript": "^7.27.0",
         "@storybook/addon-essentials": "^7.6.11",
         "@storybook/addon-mdx-gfm": "^7.6.11",
         "@storybook/react": "^7.6.11",
@@ -42,7 +42,7 @@
         "react-dom": "^18.2.0",
         "rimraf": "5.0.5",
         "storybook": "^7.6.11",
-        "typescript": "5.3.3",
-        "webpack": "^5.90.0"
+        "typescript": "5.8.3",
+        "webpack": "^5.99.5"
     }
 }
